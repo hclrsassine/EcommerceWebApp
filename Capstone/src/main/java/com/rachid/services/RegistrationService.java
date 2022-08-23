@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 
 import com.rachid.EmailValidator;
 import com.rachid.RegistrationRequest;
-import com.rachid.model.GroupUserRole;
 import com.rachid.model.User;
 
 import lombok.AllArgsConstructor;
@@ -23,7 +22,7 @@ public class RegistrationService {
 		{
 			throw new IllegalStateException("email not valid");
 		}
-		return groupUserDetailsService.signUpUser(new User(request.getFirstName(), request.getLastName(),request.getUsername(), request.getEmail(),request.getPassword(),GroupUserRole.USER));
+		return groupUserDetailsService.signUpUser(new User(null, request.getFirstName(), request.getLastName(),request.getUsername(), request.getEmail(),request.getPassword(), null));
 	}
 
 }
